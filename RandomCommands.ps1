@@ -12,3 +12,18 @@ Show-Command Get-Command
 
 Get-ADUser -Filter * -Properties * | Select-Object -Last 1 | Get-Member | measure
 
+# Modules
+$env:PSModulePath
+
+Get-Module
+Get-Module -ListAvailable
+
+Import-Module Microsoft.Powershell.Utility
+Get-Module
+Remove-Module Microsoft.Powershell.Utility
+Write-Host "Hello World"
+Get-Module
+
+Get-Command -Module <ModuleName>
+
+Get-Service wuauserv -computer (get-content c:\work\computers.txt
